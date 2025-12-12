@@ -24,16 +24,16 @@
             padding: 20px;
             box-sizing: border-box;
             
-            /* --- THE FIX: MOVES IT UP --- */
-            /* Pulls the window up by 20% of the viewport height */
-            margin-top: -20vh; 
+            /* --- THE FIX: MOVES IT HIGHER --- */
+            /* Pulls the window up by 35% of the viewport height */
+            margin-top: -35vh; 
         }
 
         p {
             margin: 15px 0;
             font-size: 1.2rem; /* Desktop Size */
             line-height: 1.5;
-            white-space: nowrap; /* Tries to keep lines together */
+            white-space: nowrap; /* Keeps lines together */
         }
 
         .prompt {
@@ -73,7 +73,7 @@
         /* --- MOBILE TWEAKS --- */
         @media (max-width: 600px) {
             p {
-                /* Slightly smaller to ensure LinkedIn link fits on one line */
+                /* Keeps text small enough to fit on one line */
                 font-size: 0.75rem; 
                 margin: 12px 0;
             }
