@@ -9,13 +9,10 @@
             background-color: #0a0a0a; /* Dark Terminal Background */
             color: #00f0ff; /* Cyan/Blue distinctive terminal color */
             font-family: 'Courier New', Courier, monospace;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            height: 100vh;
+            overflow: hidden; /* Prevents scrollbars */
         }
 
         .terminal-window {
@@ -24,16 +21,17 @@
             padding: 20px;
             box-sizing: border-box;
             
-            /* --- THE FIX: MOVES IT HIGHER --- */
-            /* Pulls the window up by 35% of the viewport height */
-            margin-top: -35vh; 
+            /* --- DESKTOP POSITIONING --- */
+            /* Starts top-left like a real terminal */
+            margin-top: 5vh;  /* 5% down from the top */
+            margin-left: 2vw; /* 2% in from the left */
         }
 
         p {
             margin: 15px 0;
             font-size: 1.2rem; /* Desktop Size */
             line-height: 1.5;
-            white-space: nowrap; /* Keeps lines together */
+            white-space: nowrap;
         }
 
         .prompt {
@@ -72,14 +70,19 @@
 
         /* --- MOBILE TWEAKS --- */
         @media (max-width: 600px) {
-            p {
-                /* Keeps text small enough to fit on one line */
-                font-size: 0.75rem; 
-                margin: 12px 0;
-            }
             .terminal-window {
+                /* On mobile, center it horizontally but keep it HIGH up */
+                margin-top: 15vh; /* 15% from the top (adjust this to go higher/lower) */
+                margin-left: auto;
+                margin-right: auto;
                 padding: 15px;
             }
+
+            p {
+                font-size: 0.75rem; /* Keeps links on one line */
+                margin: 12px 0;
+            }
+            
             .cursor {
                 height: 0.8rem;
                 width: 8px;
