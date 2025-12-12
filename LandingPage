@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zack Smallwood</title>
+    <style>
+        body {
+            background-color: #0a0a0a; /* Dark Terminal Background */
+            color: #00f0ff; /* Cyan/Blue distinctive terminal color */
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .terminal-window {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 1.2rem;
+            line-height: 1.5;
+        }
+
+        .prompt {
+            color: #666; /* Grey prompt > symbol */
+            margin-right: 10px;
+        }
+
+        a {
+            color: #00f0ff;
+            text-decoration: none;
+            border-bottom: 1px dashed #00f0ff;
+        }
+
+        a:hover {
+            background-color: #00f0ff;
+            color: #000;
+        }
+
+        /* The Blinking Cursor Effect */
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 1.2rem;
+            background-color: #00f0ff;
+            animation: blink 1s step-end infinite;
+            vertical-align: middle;
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-window">
+        <p><span class="prompt">></span>User: Zack Smallwood</p>
+        
+        <p><span class="prompt">></span>Role: Zero-Trust Architect</p>
+        
+        <p><span class="prompt">></span>Status: <span style="color:#2ecc71">Online</span></p>
+        
+        <p><span class="prompt">></span>Contact: <a href="mailto:Me@ZackSmallwood.com">Me@ZackSmallwood.com</a></p>
+        
+        <p><span class="prompt">></span>Connect: <a href="https://www.linkedin.com/in/zacksmallwood" target="_blank">linkedin.com/in/zacksmallwood</a><span class="cursor"></span></p>
+    </div>
+
+</body>
+</html>
