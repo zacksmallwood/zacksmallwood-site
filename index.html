@@ -12,31 +12,37 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            height: 100vh; /* Full viewport height */
             margin: 0;
-            padding: 20px;
+            padding: 0;
+            overflow: hidden; /* Prevents scrolling on mobile */
         }
 
         .terminal-window {
-            max-width: 600px;
+            max-width: 650px;
             width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         p {
             margin: 15px 0;
-            font-size: 1.2rem;
+            font-size: 1.2rem; /* Desktop Size */
             line-height: 1.5;
+            white-space: nowrap; /* Tries to keep lines together */
         }
 
         .prompt {
             color: #666; /* Grey prompt > symbol */
-            margin-right: 10px;
+            margin-right: 12px;
+            font-weight: bold;
         }
 
         a {
             color: #00f0ff;
             text-decoration: none;
             border-bottom: 1px dashed #00f0ff;
+            transition: all 0.3s ease;
         }
 
         a:hover {
@@ -59,6 +65,21 @@
             0%, 100% { opacity: 1; }
             50% { opacity: 0; }
         }
+
+        /* --- MOBILE TWEAKS --- */
+        @media (max-width: 600px) {
+            p {
+                font-size: 0.85rem; /* Smaller font to prevent wrapping */
+                margin: 12px 0;
+            }
+            .terminal-window {
+                padding: 15px; /* Tighter padding on phone */
+            }
+            .cursor {
+                height: 0.9rem; /* Adjust cursor size to match text */
+                width: 8px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,7 +93,7 @@
         
         <p><span class="prompt">></span>Contact: <a href="mailto:Me@ZackSmallwood.com">Me@ZackSmallwood.com</a></p>
         
-        <p><span class="prompt">></span>Connect: <a href="https://www.linkedin.com/in/zacksmallwood" target="_blank">linkedin.com/in/zacksmallwood</a><span class="cursor"></span></p>
+        <p><span class="prompt">></span>Connect: <a href="https://www.linkedin.com/in/zacksmallwood" target="_blank">linkedin/in/zacksmallwood</a><span class="cursor"></span></p>
     </div>
 
 </body>
