@@ -12,10 +12,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Full viewport height */
+            height: 100vh;
             margin: 0;
             padding: 0;
-            overflow: hidden; /* Prevents scrolling on mobile */
+            overflow: hidden;
         }
 
         .terminal-window {
@@ -23,6 +23,10 @@
             width: 100%;
             padding: 20px;
             box-sizing: border-box;
+            
+            /* --- THE FIX: MOVES IT UP --- */
+            /* Pulls the window up by 20% of the viewport height */
+            margin-top: -20vh; 
         }
 
         p {
@@ -69,14 +73,15 @@
         /* --- MOBILE TWEAKS --- */
         @media (max-width: 600px) {
             p {
-                font-size: 0.85rem; /* Smaller font to prevent wrapping */
+                /* Slightly smaller to ensure LinkedIn link fits on one line */
+                font-size: 0.75rem; 
                 margin: 12px 0;
             }
             .terminal-window {
-                padding: 15px; /* Tighter padding on phone */
+                padding: 15px;
             }
             .cursor {
-                height: 0.9rem; /* Adjust cursor size to match text */
+                height: 0.8rem;
                 width: 8px;
             }
         }
